@@ -1,0 +1,152 @@
+{
+  "workspaces": {
+    "默认1-大纲加正文": {
+      "main": {
+        "id": "6bb70b197b1f7589",
+        "type": "split",
+        "children": [
+          {
+            "id": "034e5b22b29b83c7",
+            "type": "leaf",
+            "dimension": 18.111455108359134,
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CSS笔记-平面与动画.md"
+              }
+            },
+            "group": "e5e9761639c350cd"
+          },
+          {
+            "id": "c3f7453a07f54dc0",
+            "type": "leaf",
+            "dimension": 81.88854489164086,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CSS笔记-平面与动画.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "e5e9761639c350cd"
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "5659c483060b0b57",
+        "type": "split",
+        "children": [
+          {
+            "id": "ff8500e99286dea2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "baa338762a46ec1e",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "b6e904341cd8e592",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "c8c9c294afec49d0",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "right": {
+        "id": "207874680fd3f5dd",
+        "type": "split",
+        "children": [
+          {
+            "id": "cf1ac1a90c70b0e0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "f434cbb65779c534",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "CSS笔记-平面与动画.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "f4905836bd6e95d2",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "CSS笔记-平面与动画.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "003292c821902025",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "ea7753cfd8d0884a",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "CSS笔记-平面与动画.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "active": "c3f7453a07f54dc0"
+    }
+  },
+  "active": "默认1-大纲加正文"
+}

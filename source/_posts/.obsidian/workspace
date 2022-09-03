@@ -1,0 +1,153 @@
+{
+  "main": {
+    "id": "6bb70b197b1f7589",
+    "type": "split",
+    "children": [
+      {
+        "id": "29f971f9cf2008b1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "网站收集.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5659c483060b0b57",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff8500e99286dea2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "baa338762a46ec1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b6e904341cd8e592",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c8c9c294afec49d0",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "207874680fd3f5dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "cf1ac1a90c70b0e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f434cbb65779c534",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "网站收集.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f4905836bd6e95d2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "网站收集.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "003292c821902025",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ea7753cfd8d0884a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "网站收集.md"
+              }
+            }
+          },
+          {
+            "id": "3db3d7b15ca4edff",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "29f971f9cf2008b1",
+  "lastOpenFiles": [
+    "网站收集.md",
+    "CSS笔记-平面与动画.md",
+    "CSS笔记-基础.md",
+    "JS学习笔记.md",
+    "CSS笔记-高级与新特性.md",
+    "CSS笔记-进阶.md",
+    "Powershell美化.md",
+    "测试.md",
+    "Python与Github API.md",
+    "python.md"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "things-style@@strong-color": "#5CBCC1",
+  "things-style@@code-color-d": "#57BE83",
+  "things-style@@default-font-color": false,
+  "things-style@@macOS-translucent": false,
+  "things-style@@floating-button-off": false,
+  "things-style@@h2-color": "#AEB2C0",
+  "things-style@@h3-color": "#AEB2C0",
+  "things-style@@h4-color": "#AEB2C0",
+  "things-style@@h5-color": "#AEB2C0",
+  "things-style@@h6-color": "#AEB2C0",
+  "things-style@@minimal-icons-off": false,
+  "things-style@@full-file-names": false,
+  "things-style@@links-int-on": true
+}

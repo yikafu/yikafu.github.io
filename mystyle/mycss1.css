@@ -1,0 +1,26 @@
+/*删除线黑幕样式*/
+del{
+  text-decoration: none;
+  color: #121212;
+  background: #121212;
+}
+  
+
+del:hover{
+  text-decoration: none;
+  background: #121212;
+  color: #ffffff;
+} 
+  
+
+/*加粗字体变色*/
+b,
+strong{
+  color: #39C5BB;
+} 
+
+#web_bg{
+  background: url(https://upyun.sorami.top/5/blog/post/96859423_p0_g.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

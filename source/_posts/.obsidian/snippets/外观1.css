@@ -1,0 +1,12 @@
+/* 大纲分割线 */
+.workspace-split.mod-root.mod-horizontal .workspace-leaf-resize-handle, .workspace-split.mod-root.mod-vertical .workspace-leaf-resize-handle {
+    border-width: 3px;
+    background-color: #2a4944;
+    border: none;
+}
+
+/* 右侧边栏颜色 */
+.workspace-split .workspace-tabs {
+    background: #14171b;
+}
+

@@ -1,0 +1,15 @@
+{
+  "provider": "iconhorse",
+  "fallbackProvider": "iconhorse",
+  "providerDomain": "",
+  "fallbackProviderDomain": "",
+  "ignored": "",
+  "overwritten": [],
+  "protocol": [],
+  "showAliased": true,
+  "showLink": true,
+  "enableReading": true,
+  "enableSource": true,
+  "enableLivePreview": true,
+  "debounce": 500
+}
