@@ -10,3 +10,18 @@
     background: #14171b;
 }
 
+/* 删除线样式 */
+del{
+    background: #000;
+    color: #000;
+    text-decoration: none;
+}
+del:hover{
+    color:#fff
+}
+
+/* 代码框样式 */
+pre.language-js {
+    width: 100%;
+    font-size: 18px;
+}

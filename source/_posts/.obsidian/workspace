@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "29f971f9cf2008b1",
+        "id": "9aeb36bd0a1d5b51",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "网站收集.md",
+            "file": "JS学习笔记.md",
             "mode": "preview",
             "source": false
           }
@@ -25,6 +25,7 @@
       {
         "id": "ff8500e99286dea2",
         "type": "tabs",
+        "dimension": 29.831387808041505,
         "children": [
           {
             "id": "baa338762a46ec1e",
@@ -58,6 +59,23 @@
             }
           }
         ]
+      },
+      {
+        "id": "2da6ce3707456530",
+        "type": "tabs",
+        "dimension": 70.16861219195849,
+        "children": [
+          {
+            "id": "f4dd1591d1dbb842",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "JS学习笔记.md"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "网站收集.md",
+                "file": "JS学习笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "网站收集.md",
+                "file": "JS学习笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,12 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "网站收集.md"
+                "file": "JS学习笔记.md"
               }
             }
           },
           {
-            "id": "3db3d7b15ca4edff",
+            "id": "e5ebdb9b1064ad8c",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -137,17 +155,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "29f971f9cf2008b1",
+  "active": "f4dd1591d1dbb842",
   "lastOpenFiles": [
-    "网站收集.md",
+    "测试.md",
+    "JS学习笔记.md",
     "CSS笔记-平面与动画.md",
     "CSS笔记-基础.md",
-    "JS学习笔记.md",
-    "CSS笔记-高级与新特性.md",
     "CSS笔记-进阶.md",
+    "CSS笔记-高级与新特性.md",
+    "www.baidu.com.md",
+    "网站收集.md",
     "Powershell美化.md",
-    "测试.md",
-    "Python与Github API.md",
-    "python.md"
+    "Python与Github API.md"
   ]
 }

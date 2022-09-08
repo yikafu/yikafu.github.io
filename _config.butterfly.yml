@@ -63,8 +63,8 @@ local_search:
 
 # MathJax
 mathjax:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
 
 # KaTeX
 katex:
@@ -852,8 +852,7 @@ inject:
     #  - <link rel="stylesheet" href="">
       - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yikafu/yikafu.github.io/_mystyle/mycss1.css">
   bottom:
-      - <script src="https://cdn.jsdelivr.net/npm/sakana"></script>
-      - <script src="https://cdn.jsdelivr.net/gh/yikafu/yikafu.github.io/_mystyle/sakana-1.js></script>
+
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要請不要修改
@@ -925,4 +924,3 @@ CDN:
     # prismjs_js:
     # prismjs_lineNumber_js:
     # prismjs_autoloader:
-

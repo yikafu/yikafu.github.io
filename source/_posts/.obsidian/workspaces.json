@@ -146,7 +146,159 @@
         "collapsed": true
       },
       "active": "c3f7453a07f54dc0"
+    },
+    "布局二-侧边栏 大纲 文件栏": {
+      "main": {
+        "id": "6bb70b197b1f7589",
+        "type": "split",
+        "children": [
+          {
+            "id": "c3f7453a07f54dc0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JS学习笔记.md",
+                "mode": "source",
+                "source": false
+              }
+            },
+            "group": "a9e22fbb2d41292d"
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "5659c483060b0b57",
+        "type": "split",
+        "children": [
+          {
+            "id": "ff8500e99286dea2",
+            "type": "tabs",
+            "dimension": 29.831387808041505,
+            "children": [
+              {
+                "id": "baa338762a46ec1e",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "b6e904341cd8e592",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "c8c9c294afec49d0",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "2da6ce3707456530",
+            "type": "tabs",
+            "dimension": 70.16861219195849,
+            "children": [
+              {
+                "id": "f4dd1591d1dbb842",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "JS学习笔记.md"
+                  }
+                },
+                "group": "a9e22fbb2d41292d"
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "207874680fd3f5dd",
+        "type": "split",
+        "children": [
+          {
+            "id": "cf1ac1a90c70b0e0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "f434cbb65779c534",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "JS学习笔记.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "f4905836bd6e95d2",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "JS学习笔记.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "003292c821902025",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "ea7753cfd8d0884a",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "JS学习笔记.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "active": "c3f7453a07f54dc0"
     }
   },
-  "active": "默认1-大纲加正文"
+  "active": "布局二-侧边栏 大纲 文件栏"
 }

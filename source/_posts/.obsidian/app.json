@@ -2,5 +2,6 @@
   "showLineNumber": false,
   "autoConvertHtml": true,
   "readableLineLength": true,
-  "legacyEditor": false
+  "legacyEditor": false,
+  "defaultViewMode": "preview"
 }
