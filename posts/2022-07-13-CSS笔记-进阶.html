@@ -1,148 +1,290 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CSS笔记-进阶 | Hexo</title><meta name="keywords" content="css"><meta name="author" content="yikafu"><meta name="copyright" content="yikafu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="一、CSS的三大特性层叠性、继承性、优先性 1.1、层叠性 相同选择器设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。 层叠性主要解决样式冲突的问题 层叠性原则： 样式冲突，遵循就近原则**（离作用处近的）    1.2、继承性 CSS中的继承：子标签会继承父标签里面的某些样式，如文本颜色和字号等 行高的特殊继承：  body &amp;#123;        font:12px&#x2F;1.5   Mi">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="yikafu">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、CSS的三大特性层叠性、继承性、优先性 1.1、层叠性 相同选择器设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。 层叠性主要解决样式冲突的问题 层叠性原则： 样式冲突，遵循就近原则**（离作用处近的）    1.2、继承性 CSS中的继承：子标签会继承父标签里面的某些样式，如文本颜色和字号等 行高的特殊继承：  1234body &amp;#123;        font:12px&#x2F;1.5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS笔记-进阶">
 <meta property="og:url" content="http://example.com/posts/2022-07-13-CSS%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、CSS的三大特性层叠性、继承性、优先性 1.1、层叠性 相同选择器设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。 层叠性主要解决样式冲突的问题 层叠性原则： 样式冲突，遵循就近原则**（离作用处近的）    1.2、继承性 CSS中的继承：子标签会继承父标签里面的某些样式，如文本颜色和字号等 行高的特殊继承：  body &amp;#123;        font:12px&#x2F;1.5   Mi">
+<meta property="og:description" content="一、CSS的三大特性层叠性、继承性、优先性 1.1、层叠性 相同选择器设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。 层叠性主要解决样式冲突的问题 层叠性原则： 样式冲突，遵循就近原则**（离作用处近的）    1.2、继承性 CSS中的继承：子标签会继承父标签里面的某些样式，如文本颜色和字号等 行高的特殊继承：  1234body &amp;#123;        font:12px&#x2F;1.5">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/28/b353d80bc1f5e400.jpg">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/30/e02a4ec5a2edb3b5.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/30/f14f39e852b19a17.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/30/7ac1cf5dece8a104.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/30/289f4d55834530b0.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/30/9336a2cf6034e27c.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/30/3052059e93a41d17.png">
 <meta property="article:published_time" content="2022-07-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-07-30T16:00:00.000Z">
-<meta property="article:author" content="yikafu">
+<meta property="article:author" content="John Doe">
 <meta property="article:tag" content="css">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/09/28/b353d80bc1f5e400.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/2022-07-13-CSS%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'CSS笔记-进阶',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2022-07-31 00:00:00'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/09/30/e02a4ec5a2edb3b5.png">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+  
+  <title>CSS笔记-进阶 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/mystyle/mycss1.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CSS笔记-进阶"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yikafu/yikafu.github.io/_mystyle/mycss1.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 活动线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2022/09/28/b353d80bc1f5e400.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 活动线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS笔记-进阶</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-12T16:00:00.000Z" title="发表于 2022-07-13 00:00:00">2022-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-30T16:00:00.000Z" title="更新于 2022-07-31 00:00:00">2022-07-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一、CSS的三大特性"><a href="#一、CSS的三大特性" class="headerlink" title="一、CSS的三大特性"></a>一、CSS的三大特性</h1><p><strong>层叠性、继承性、优先性</strong></p>
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-13 00:00" pubdate>
+          2022年7月13日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          59 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CSS笔记-进阶</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一、CSS的三大特性"><a href="#一、CSS的三大特性" class="headerlink" title="一、CSS的三大特性"></a>一、CSS的三大特性</h1><p><strong>层叠性、继承性、优先性</strong></p>
 <h2 id="1-1、层叠性"><a href="#1-1、层叠性" class="headerlink" title="1.1、层叠性"></a>1.1、层叠性</h2><ul>
 <li>相同选择器设置相同的样式，此时一个样式就会<strong>覆盖</strong>另一个冲突的样式。</li>
 <li>层叠性主要解决样式冲突的问题</li>
@@ -155,16 +297,17 @@
 <li>CSS中的继承：子标签会继承父标签里面的某些样式，如<strong>文本颜色和字号</strong>等</li>
 <li>行高的特殊继承：</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">font</span>:<span class="number">12px</span>/<span class="number">1.5</span>   Microsoft YaHei</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 1.5的意思：让里面所有的子元素的行高是当前文字大小的1.5倍 */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br>        <span class="hljs-attribute">font</span>:<span class="hljs-number">12px</span>/<span class="hljs-number">1.5</span>   Microsoft YaHei<br>&#125;<br><span class="hljs-comment">/* 1.5的意思：让里面所有的子元素的行高是当前文字大小的1.5倍 */</span><br></code></pre></td></tr></table></figure>
+
 <h2 id="1-3、优先级"><a href="#1-3、优先级" class="headerlink" title="1.3、优先级"></a>1.3、优先级</h2><ul>
 <li>当同一个元素指定多个选择器，就会有优先级的产生</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style&gt;	</span><br><span class="line">         <span class="selector-tag">div</span>&#123;</span><br><span class="line">            <span class="attribute">color</span>:pink;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="selector-class">.text</span> &#123;</span><br><span class="line">         <span class="attribute">color</span>:red;</span><br><span class="line">         &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">      &lt;<span class="selector-tag">div</span> class=&quot;text&quot;&gt;你笑起来真好看&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;head&gt;<br>    &lt;style&gt;	<br>         <span class="hljs-selector-tag">div</span>&#123;<br>            <span class="hljs-attribute">color</span>:pink;<br>         &#125;<br>         <span class="hljs-selector-class">.text</span> &#123;<br>         <span class="hljs-attribute">color</span>:red;<br>         &#125;<br>    &lt;/style&gt;<br>&lt;/head&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>      &lt;<span class="hljs-selector-tag">div</span> class=&quot;text&quot;&gt;你笑起来真好看&lt;/<span class="hljs-selector-tag">div</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+
 <ul>
 <li>选择器相同，则执行<strong>层叠性</strong></li>
 <li>选择器不同，则按<strong>权重</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -172,8 +315,7 @@
 <th>权重</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>继承或者 *</td>
 <td>0，0，0，0</td>
 </tr>
@@ -190,28 +332,25 @@
 <td>0，1，0，0</td>
 </tr>
 <tr>
-<td>行内样式style=””</td>
+<td>行内样式style&#x3D;””</td>
 <td>1，0，0，0</td>
 </tr>
 <tr>
 <td>！important重要的</td>
 <td>无穷大</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>等级判断是从左到右，如果某一位数值相同，则判断下一位数值</li>
 <li>权重可以叠加，<strong>但是永远不会有进位</strong></li>
-<li><p><strong>继承的权重是0</strong>，如果该元素没有直接选中，不管父元素权重多高，子元素得到的权重都是0。</p>
-<h1 id="二、盒子模型"><a href="#二、盒子模型" class="headerlink" title="二、盒子模型"></a>二、盒子模型</h1></li>
+<li><strong>继承的权重是0</strong>，如果该元素没有直接选中，不管父元素权重多高，子元素得到的权重都是0。</li>
 </ul>
-<p>分为border(边框)、content(内容)、padding(内边距)、margin(外边距)<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/30/e02a4ec5a2edb3b5.png" alt=""></p>
+<h1 id="二、盒子模型"><a href="#二、盒子模型" class="headerlink" title="二、盒子模型"></a>二、盒子模型</h1><p>分为border(边框)、content(内容)、padding(内边距)、margin(外边距)<br><img src="https://s3.bmp.ovh/imgs/2022/09/30/e02a4ec5a2edb3b5.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="2-1、边框border"><a href="#2-1、边框border" class="headerlink" title="2.1、边框border"></a>2.1、边框border</h2><ul>
 <li>CSS 边框属性指定一个元素边框的样式和颜色，边框由三部分组成：边框宽度（粗细） 边框样式 边框颜色</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border</span> : borde-width || border-style || border-color</span><br><span class="line"><span class="comment">/* 边框的复合写法 ， 没有先后顺序之分*/</span></span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border</span> : borde-width || border-style || border-color<br><span class="hljs-comment">/* 边框的复合写法 ， 没有先后顺序之分*/</span><br></code></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -219,8 +358,7 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>border-width</td>
 <td>定义边框粗细，单位是px</td>
 </tr>
@@ -232,9 +370,7 @@
 <td>border-color</td>
 <td>边框颜色</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h3 id="2-1-1、border-style"><a href="#2-1-1、border-style" class="headerlink" title="2.1.1、border-style"></a>2.1.1、border-style</h3><p>边框样式 border-style可以设置如下值：</p>
 <ol>
 <li><code>none</code>:没有边框即忽略所有边框的宽度（默认值）</li>
@@ -245,19 +381,19 @@
 <h3 id="2-1-2、border-collapse"><a href="#2-1-2、border-collapse" class="headerlink" title="2.1.2、border-collapse"></a>2.1.2、border-collapse</h3><ul>
 <li>border-collapse 属性控制相邻单元格的边框，是表格的细线边框</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-collapse</span> : collapse;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-collapse</span> : collapse;<br></code></pre></td></tr></table></figure>
+
 <ul>
 <li>表示相邻边框合并在一起</li>
 </ul>
 <h3 id="2-1-3、边框会影响盒子实际大小"><a href="#2-1-3、边框会影响盒子实际大小" class="headerlink" title="2.1.3、边框会影响盒子实际大小"></a>2.1.3、边框会影响盒子实际大小</h3><p>边框会额外增加盒子的实际大小，因此我们有两种方案解决：</p>
 <ol>
 <li>测量盒子大小的时候，不量边框</li>
-<li>如果测量的时候包含了边框，则需要 width/height 减去边框宽度</li>
+<li>如果测量的时候包含了边框，则需要 width&#x2F;height 减去边框宽度</li>
 </ol>
 <h2 id="2-2、内边距padding"><a href="#2-2、内边距padding" class="headerlink" title="2.2、内边距padding"></a>2.2、内边距padding</h2><ul>
 <li>用于设置内边距,即盒子边框与内容之间的距离</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -265,8 +401,7 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>padding-left</td>
 <td>左内边距</td>
 </tr>
@@ -282,13 +417,10 @@
 <td>padding-bottom</td>
 <td>下内边距</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>padding属性(简写属性)可以有一到四个值</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -296,8 +428,7 @@
 <th>表达意思</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>padding : 5px;</td>
 <td>1个值，代表<strong>上下左右</strong>都有5像素内边距</td>
 </tr>
@@ -313,13 +444,11 @@
 <td>padding :5px 10px 20px 30px</td>
 <td>4个值，上是5像素，右是10像素，下20像素，左是30像素，顺时针</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
-<li><p>padding会影响盒子大小的情况：如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子。若要保证盒子跟效果图大小保持一致，则让 width/height 减去多出来的内边距大小即可。</p>
+<li><p>padding会影响盒子大小的情况：如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子。若要保证盒子跟效果图大小保持一致，则让 width&#x2F;height 减去多出来的内边距大小即可。</p>
 </li>
-<li><p>padding不会影响盒子大小的情况：如果盒子本身没有指定width/height属性，则此时padding不会撑开盒子大小。</p>
+<li><p>padding不会影响盒子大小的情况：如果盒子本身没有指定width&#x2F;height属性，则此时padding不会撑开盒子大小。</p>
 </li>
 </ul>
 <h2 id="2-3、外边距margin"><a href="#2-3、外边距margin" class="headerlink" title="2.3、外边距margin"></a>2.3、外边距margin</h2><ul>
@@ -329,22 +458,24 @@
 </li>
 </ul>
 <h3 id="2-3-1、外边距典型应用"><a href="#2-3-1、外边距典型应用" class="headerlink" title="2.3.1、外边距典型应用"></a>2.3.1、外边距典型应用</h3><p>外边距可以让<strong>块级盒子水平居中</strong>，但是必须满足两个条件。一是盒子必须制定了宽度(width)，二是盒子左右的外边距都设置为 auto。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">960px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.header</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">960px</span>;<br>    <span class="hljs-attribute">margin</span>: auto;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>左右的外边距都设置为 auto 有三种写法：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">margin-left</span>: auto; <span class="attribute">margin-right</span>: auto;</span><br><span class="line"></span><br><span class="line"><span class="attribute">margin</span>: auto;</span><br><span class="line"></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">margin-left</span>: auto; <span class="hljs-attribute">margin-right</span>: auto;<br><br><span class="hljs-attribute">margin</span>: auto;<br><br><span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;<br></code></pre></td></tr></table></figure>
+
 <p>以上方法是让块级元素水平居中，行内元素或者行内块元素水平居中给其父元素添加 text-align: center 即可。</p>
 <h3 id="2-3-2、外边距合并"><a href="#2-3-2、外边距合并" class="headerlink" title="2.3.2、外边距合并"></a>2.3.2、外边距合并</h3><p>使用 margin 定义块级元素的垂直外边距时，可能会出现外边距的合并。<strong>「嵌套块元素垂直外边距的塌陷」</strong>  和  <strong>「嵌套块元素垂直外边距的塌陷」</strong></p>
 <ol>
 <li><p><strong>相邻块元素垂直外边距的合并</strong>。</p>
 <p>当上下相邻的两个块元素（兄弟关系）相遇时，如果上面的元素有下外边距 margin-bottom，下面的元素有上外边距 margin-top ，则他们之间的垂直间距不是 margin-bottom 与 margin-top 之和。*取两个值中的较大者这种现象被称为相邻块元素垂直外边距的合并。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/30/f14f39e852b19a17.png" alt=""></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/09/30/f14f39e852b19a17.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>我们尽量只给一个盒子添加 margin 值</li>
 </ul>
 </li>
 <li><p><strong>嵌套块元素垂直外边距的塌陷</strong>。</p>
 <p>对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/30/7ac1cf5dece8a104.png" alt=""></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/09/30/7ac1cf5dece8a104.png" srcset="/img/loading.gif" lazyload></p>
 <p>解决方案：</p>
 <ol>
 <li>可以为父元素定义上边框</li>
@@ -355,23 +486,26 @@
 </li>
 </ol>
 <h2 id="2-4、清除内外边距"><a href="#2-4、清除内外边距" class="headerlink" title="2.4、清除内外边距"></a>2.4、清除内外边距</h2><p>网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局前，首先要清除下网页元素的内外边距。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">* &#123;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h2 id="2-5、-圆角边框"><a href="#2-5、-圆角边框" class="headerlink" title="2.5、 圆角边框"></a>2.5、 圆角边框</h2><ul>
 <li>border-radius 属性用于设置元素的外边框圆角。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>:<span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">10px</span>;<br></code></pre></td></tr></table></figure>
+
 <ul>
 <li><code>radius</code>半径参数值可以是<strong>数值</strong>或<strong>百分比</strong>的形式</li>
 <li>正方形要设置为一个圆，把数值修改为高度或者宽度的一半即可，或者直接写为50%</li>
 <li>矩形要设置为一个圆，设置为高度的一半就可以</li>
 <li>该属性是一个简写属性，可以跟四个值，分别代表左上, 右上，右下，左下</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*	</span></span><br><span class="line"><span class="comment">border-top-left-radius:	</span></span><br><span class="line"><span class="comment">border-top-right-radius:</span></span><br><span class="line"><span class="comment">border-bottom-right-radius:</span></span><br><span class="line"><span class="comment">border-bottom-left-radius:</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*	</span><br><span class="hljs-comment">border-top-left-radius:	</span><br><span class="hljs-comment">border-top-right-radius:</span><br><span class="hljs-comment">border-bottom-right-radius:</span><br><span class="hljs-comment">border-bottom-left-radius:</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
 <h2 id="2-6、盒子阴影"><a href="#2-6、盒子阴影" class="headerlink" title="2.6、盒子阴影"></a>2.6、盒子阴影</h2><ul>
 <li>box-shadow 属性用于为盒子添加阴影。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: h-shadow v-shadow blur spread color inset;</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-shadow</span>: h-shadow v-shadow blur spread color inset;<br></code></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -379,8 +513,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>h-shadow</td>
 <td>必需。水平阴影的位置，允许负值</td>
 </tr>
@@ -404,9 +537,7 @@
 <td>inset</td>
 <td>可选，将外部阴影（outset）改为内部阴影</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p><strong>注意：</strong></p>
 <ol>
 <li>默认的是外阴影（outset），但是不可以在后面写这个单词，否则导致阴影无效</li>
@@ -415,17 +546,19 @@
 <h3 id="2-6-1、动态阴影"><a href="#2-6-1、动态阴影" class="headerlink" title="2.6.1、动态阴影"></a>2.6.1、动态阴影</h3><ul>
 <li>原先盒子没有影子，当我们鼠标经过盒子就添加阴影效果</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">      <span class="attribute">box-shadow</span>:<span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> -<span class="number">4px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">3</span>);         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>      <span class="hljs-attribute">box-shadow</span>:<span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> -<span class="hljs-number">4px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">3</span>);         <br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h3 id="2-6-1-、文本阴影"><a href="#2-6-1-、文本阴影" class="headerlink" title="2.6.1 、文本阴影"></a>2.6.1 、文本阴影</h3><ul>
 <li>text-shadow 属性将阴影应用于文本</li>
 </ul>
-<figure class="highlight plaintext"><figcaption><span>css</span></figcaption><table><tr><td class="code"><pre><span class="line">text-shadow: h-shadow v-shadow blur color</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs #">text-shadow: h-shadow v-shadow blur color<br></code></pre></td></tr></table></figure>
+
 <h1 id="三、浮动"><a href="#三、浮动" class="headerlink" title="三、浮动"></a>三、浮动</h1><h2 id="3-1、传统网页布局的三种方式"><a href="#3-1、传统网页布局的三种方式" class="headerlink" title="3.1、传统网页布局的三种方式"></a>3.1、传统网页布局的三种方式</h2><p>CSS 的三种传统布局方式：普通流（标准流） 、浮动 、 定位</p>
 <h2 id="3-2、浮动的使用"><a href="#3-2、浮动的使用" class="headerlink" title="3.2、浮动的使用"></a>3.2、浮动的使用</h2><ul>
 <li><code>float</code>属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘（先确定浮动的方位，然后吸附在盒子的边缘上）</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    <span class="attribute">float</span>: 属性值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123;<br>    <span class="hljs-attribute">float</span>: 属性值;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -433,8 +566,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>none</td>
 <td>元素不浮动</td>
 </tr>
@@ -446,9 +578,7 @@
 <td>right</td>
 <td>元素向右浮动</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>网页布局的第一准则：多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动</li>
 <li>网页布局第二准则：先设置盒子大小，之后设置盒子的位置。</li>
@@ -459,25 +589,25 @@
 </ul>
 </li>
 </ol>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/30/289f4d55834530b0.png" alt="float1"></p>
-<ol>
+<p><img src="https://s3.bmp.ovh/imgs/2022/09/30/289f4d55834530b0.png" srcset="/img/loading.gif" lazyload alt="float1"></p>
+<ol start="2">
 <li><strong>如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列</strong></li>
 </ol>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/30/9336a2cf6034e27c.png" alt="float2"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/09/30/9336a2cf6034e27c.png" srcset="/img/loading.gif" lazyload alt="float2"></p>
 <ul>
 <li>浮动的元素是相互贴靠在一起的，如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐。</li>
 </ul>
-<ol>
+<ol start="3">
 <li><strong>浮动元素会具有行内块元素特性</strong></li>
 </ol>
 <p>任何元素都可以浮动。不管原先是什么模式的元素，添加浮动之后都具有<strong>行内块元素</strong>相似的特性。</p>
 <ul>
 <li>如果块级盒子没有设置宽度，默认宽度和父级一样宽，但是添加浮动后，它的大小根据内容来决定</li>
-<li>如果行内元素有了浮动，则不需要转换块级/行内块元素就可以直接给高度和宽度</li>
+<li>如果行内元素有了浮动，则不需要转换块级&#x2F;行内块元素就可以直接给高度和宽度</li>
 <li>浮动的盒子中间是没有缝隙的，是紧挨着一起的</li>
 </ul>
 <h2 id="3-4、-浮动元素和标准流父级搭配使用"><a href="#3-4、-浮动元素和标准流父级搭配使用" class="headerlink" title="3.4、 浮动元素和标准流父级搭配使用"></a>3.4、 浮动元素和标准流父级搭配使用</h2><p>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/30/3052059e93a41d17.png" alt="float3"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/09/30/3052059e93a41d17.png" srcset="/img/loading.gif" lazyload alt="float3"></p>
 <h2 id="3-5、-浮动的注意点"><a href="#3-5、-浮动的注意点" class="headerlink" title="3.5、 浮动的注意点"></a>3.5、 浮动的注意点</h2><p>1.浮动和标准流的父盒子搭配。</p>
 <ul>
 <li>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</li>
@@ -491,8 +621,8 @@
 <li>如果父盒子本身有高度，则不需要清除浮动</li>
 <li>清除浮动后，父级就会根据浮动的子盒子自动检测高度，父级有了高度就不会影响下面的标准流</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    <span class="attribute">clear</span>: 属性值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123;<br>    <span class="hljs-attribute">clear</span>: 属性值;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -500,8 +630,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>left</td>
 <td>不允许左侧有浮动元素(清除左侧浮动的影响)</td>
 </tr>
@@ -513,9 +642,7 @@
 <td>both</td>
 <td>同时清除左右两侧浮动的影响</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>我们实际工作中，几乎只用<code>clear:both</code></li>
 <li>清除浮动的策略是：闭合浮动</li>
@@ -528,27 +655,29 @@
 <li>额外标签法会在浮动元素末尾添加一个空的标签,例如：<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code>，或者其他标签（如<code>&lt;/br&gt;</code>等）</li>
 <li>注意：要求这个新的空标签必须是块级元素</li>
 </ul>
-<ol>
+<ol start="2">
 <li>overflow</li>
 </ol>
 <ul>
 <li>给父级添加<code>overflow</code>属性，将其属性值设置为<code>hidden</code>,<code>auto</code>或<code>scroll</code></li>
 </ul>
-<ol>
+<ol start="3">
 <li><code>:after</code>伪元素法</li>
 </ol>
 <ul>
 <li><code>:after</code> 方式是额外标签法的升级版。也是给父元素添加</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">      *zoom:<span class="number">1</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span> &#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">clear</span>: both;<br>    <span class="hljs-attribute">visibility</span>: hidden;<br>&#125;<br><span class="hljs-selector-class">.clearfix</span> &#123;<br>      *zoom:<span class="hljs-number">1</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>4.双伪元素</p>
 <ul>
 <li>也是给父元素添加</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">   <span class="attribute">content</span>:<span class="string">&quot;&quot;</span>;</span><br><span class="line">   <span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">     <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  *zoom:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:before</span>,<span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span>&#123;<br>   <span class="hljs-attribute">content</span>:<span class="hljs-string">&quot;&quot;</span>;<br>   <span class="hljs-attribute">display</span>:table;<br>&#125;<br><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span> &#123;<br>     <span class="hljs-attribute">clear</span>:both;<br>&#125;<br><span class="hljs-selector-class">.clearfix</span> &#123;<br>  *zoom:<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h1 id="四、定位"><a href="#四、定位" class="headerlink" title="四、定位"></a>四、定位</h1><p>将盒子定在某一个位置，所以定位也是在摆放盒子，按照定位的方式移动盒子。</p>
 <p>实现某个元素可以自由的在一个盒子内移动位置，并且压住其他盒子，当我们滚动窗口的时候，盒子是固定屏幕某个位置的。</p>
-<h2 id="4-1-、定位的组成"><a href="#4-1-、定位的组成" class="headerlink" title="4.1 、定位的组成"></a>4.1 、定位的组成</h2><p>定位 = 定位模式 +边偏移</p>
+<h2 id="4-1-、定位的组成"><a href="#4-1-、定位的组成" class="headerlink" title="4.1 、定位的组成"></a>4.1 、定位的组成</h2><p>定位 &#x3D; 定位模式 +边偏移</p>
 <ul>
 <li>定位模式用于指定一个元素在文档中的定位方式</li>
 <li>边偏移则决定了该元素的最终位置</li>
@@ -556,17 +685,64 @@
 <ol>
 <li><p>定位模式</p>
 <p>通过 CSS 的 <code>position</code>属性来设置</p>
-<p>| 值       | 语义     |<br>| ———— | ———— |<br>| static   | 静态定位 |<br>| relative | 相对定位 |<br>| absolute | 绝对定位 |<br>| fixed    | 固定定位 |</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static</td>
+<td>静态定位</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>相对定位</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>固定定位</td>
+</tr>
+</tbody></table>
 </li>
 <li><p>位偏移</p>
-<p>| 边偏移属性 |       描述                               |<br>| ————— | ———————————————————-|<br>| top        |顶端偏移量，定义元素相对于其父元素的上边线的距离 |<br>| bottom     |底部偏移量，定义元素相对于其父元素的下边线的距离 |<br>| right      |右侧偏移量，定义元素相对于其父元素右边线的距离   |<br>| left       |左侧偏移量，定义元素相对于其父元素左边线的距离   |</p>
+<table>
+<thead>
+<tr>
+<th>边偏移属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>top</td>
+<td>顶端偏移量，定义元素相对于其父元素的上边线的距离</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>底部偏移量，定义元素相对于其父元素的下边线的距离</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右侧偏移量，定义元素相对于其父元素右边线的距离</td>
+</tr>
+<tr>
+<td>left</td>
+<td>左侧偏移量，定义元素相对于其父元素左边线的距离</td>
+</tr>
+</tbody></table>
 </li>
 </ol>
 <h2 id="4-2、静态定位static-了解"><a href="#4-2、静态定位static-了解" class="headerlink" title="4.2、静态定位static(了解)"></a>4.2、静态定位static(了解)</h2><ul>
 <li>静态定位是元素的<strong>默认定位方式，无定位</strong>的意思</li>
 <li>静态定位没有边偏移</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">	<span class="attribute">position</span>: static;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123;<br>	<span class="hljs-attribute">position</span>: static;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h2 id="4-3、相对定位relative"><a href="#4-3、相对定位relative" class="headerlink" title="4.3、相对定位relative"></a>4.3、相对定位relative</h2><ul>
 <li>特点：<ul>
 <li>它是相对于自己原来的位置来移动的</li>
@@ -593,7 +769,8 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="comment">/* 1.left走50%，父容器宽度的一半 */</span></span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="comment">/* 2.margin 负值往左边走 自己盒子宽度的一半 */</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -xx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-comment">/* 1.left走50%，父容器宽度的一半 */</span><br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;<br>    <span class="hljs-comment">/* 2.margin 负值往左边走 自己盒子宽度的一半 */</span><br>    <span class="hljs-attribute">margin-left</span>: -xx;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h2 id="4-5、子绝父相"><a href="#4-5、子绝父相" class="headerlink" title="4.5、子绝父相"></a>4.5、子绝父相</h2><p><strong>子级使用绝对定位，父级则需要相对定位</strong></p>
 <ol>
 <li><p>子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟盒子。</p>
@@ -616,11 +793,13 @@
 <ul>
 <li>固定定位小技巧： 固定在版心右侧位置</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="comment">/* 1.left走50%，父容器宽度的一半 */</span></span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="comment">/* 2.margin 负值往左边走 自己盒子宽度的一半 */</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -xx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-comment">/* 1.left走50%，父容器宽度的一半 */</span><br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;<br>    <span class="hljs-comment">/* 2.margin 负值往左边走 自己盒子宽度的一半 */</span><br>    <span class="hljs-attribute">margin-left</span>: -xx;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h2 id="4-7、定位叠放z-index"><a href="#4-7、定位叠放z-index" class="headerlink" title="4.7、定位叠放z-index"></a>4.7、定位叠放z-index</h2><ul>
 <li>用 z-index 来控制盒子的前后次序(z轴向外)，防止盒子重叠</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器 &#123;<br>    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+
 <ol>
 <li>数值是整数，默认是auto</li>
 <li>属性值相同，则按照书写顺序，后来居上</li>
@@ -642,8 +821,6 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
 <li><p><strong>定位特殊特性</strong></p>
 <ul>
 <li><p>行内元素添加绝对或者固定定位，可以直接设置高度和宽度</p>
@@ -652,15 +829,11 @@
 </li>
 </ul>
 </li>
-</ol>
-<ol>
 <li><p><strong>脱标的盒子不会触发外边距塌陷</strong></p>
 <ul>
 <li>浮动元素、绝对定位(固定定位)元素都不会触发外边距合并的问题。</li>
 </ul>
 </li>
-</ol>
-<ol>
 <li><p><strong>绝对定位(固定定位)会完全压住盒子</strong></p>
 <ul>
 <li><p>浮动元素不同，只会压住它下面标准流的盒子，但是不会压住下面标准流盒子里面的文字（图片） ，即文字具有环绕效果</p>
@@ -671,19 +844,20 @@
 </li>
 </ol>
 <h1 id="五、元素的隐藏与显示"><a href="#五、元素的隐藏与显示" class="headerlink" title="五、元素的隐藏与显示"></a>五、元素的隐藏与显示</h1><h2 id="5-1、display显示隐藏"><a href="#5-1、display显示隐藏" class="headerlink" title="5.1、display显示隐藏"></a>5.1、display显示隐藏</h2><p><code>display</code>用于设置一个元素应如何显示</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">display</span>: none/block;  </span><br><span class="line"><span class="comment">/*隐藏对象/显示元素*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">display</span>: none/block;  <br><span class="hljs-comment">/*隐藏对象/显示元素*/</span><br></code></pre></td></tr></table></figure>
+
 <ul>
 <li><strong><code>display</code>隐藏元素后，不再占有原来的位置</strong></li>
 </ul>
 <h2 id="5-2、visibility可见性"><a href="#5-2、visibility可见性" class="headerlink" title="5.2、visibility可见性"></a>5.2、visibility可见性</h2><p><code>visibility</code>用于指定一个元素应可见还是隐藏</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">visibility</span>: visible/hidden; </span><br><span class="line"><span class="comment">/*元素可视/元素隐藏*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">visibility</span>: visible/hidden; <br><span class="hljs-comment">/*元素可视/元素隐藏*/</span><br></code></pre></td></tr></table></figure>
+
 <ul>
 <li><strong><code>visibility</code> 隐藏元素后，继续占有原来的位置。</strong></li>
 <li>如果隐藏元素想要原来位置， 就用 <code>visibility：hidden</code></li>
-<li>如果隐藏元素不想要原来位置， 就用 <code>display：none</code> </li>
+<li>如果隐藏元素不想要原来位置， 就用 <code>display：none</code></li>
 </ul>
 <h2 id="5-3、overflow溢出显示隐藏"><a href="#5-3、overflow溢出显示隐藏" class="headerlink" title="5.3、overflow溢出显示隐藏"></a>5.3、overflow溢出显示隐藏</h2><p><code>overflow</code> 属性指定了如果内容溢出一个元素的框（超过其指定高度及宽度） 时，会发生什么。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -691,8 +865,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>visible</td>
 <td>不剪切内容也不添加滚动条</td>
 </tr>
@@ -708,82 +881,378 @@
 <td>auto</td>
 <td>超出自动显示滚动条，不超出不显示滚动条</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p><strong>有定位的盒子， 请慎用 <code>overflow:hidden</code> 因为它会隐藏多余的部分。</strong></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">yikafu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/2022-07-13-CSS%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6.html">http://example.com/posts/2022-07-13-CSS%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/css/">css</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2022/09/28/b353d80bc1f5e400.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2022-08-01-CSS%E7%AC%94%E8%AE%B0-%E9%AB%98%E7%BA%A7%E4%B8%8E%E6%96%B0%E7%89%B9%E6%80%A7.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/28/8094a8dba4e7aaad.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CSS笔记-高级与新特性</div></div></a></div><div class="next-post pull-right"><a href="/posts/2022-02-24-python.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/28/2b5095a3cf0a5785.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/2022-02-03-CSS%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80.html" title="CSS笔记-基础"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/28/08e9f527e257d0e8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-03</div><div class="title">CSS笔记-基础</div></div></a></div><div><a href="/posts/2022-08-07-CSS%E7%AC%94%E8%AE%B0-%E5%B9%B3%E9%9D%A2%E4%B8%8E%E5%8A%A8%E7%94%BB.html" title="CSS笔记-平面与动画"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/28/0ae30cd2fe17dae3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-07</div><div class="title">CSS笔记-平面与动画</div></div></a></div><div><a href="/posts/2022-08-01-CSS%E7%AC%94%E8%AE%B0-%E9%AB%98%E7%BA%A7%E4%B8%8E%E6%96%B0%E7%89%B9%E6%80%A7.html" title="CSS笔记-高级与新特性"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2022/09/28/8094a8dba4e7aaad.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-01</div><div class="title">CSS笔记-高级与新特性</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">一、CSS的三大特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E3%80%81%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">1.1、层叠性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E3%80%81%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">1.2、继承性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.3.</span> <span class="toc-text">1.3、优先级</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">二、盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81%E8%BE%B9%E6%A1%86border"><span class="toc-number">2.1.</span> <span class="toc-text">2.1、边框border</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1%E3%80%81border-style"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1、border-style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E3%80%81border-collapse"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2、border-collapse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3%E3%80%81%E8%BE%B9%E6%A1%86%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%9B%92%E5%AD%90%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3、边框会影响盒子实际大小</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E3%80%81%E5%86%85%E8%BE%B9%E8%B7%9Dpadding"><span class="toc-number">2.2.</span> <span class="toc-text">2.2、内边距padding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81%E5%A4%96%E8%BE%B9%E8%B7%9Dmargin"><span class="toc-number">2.3.</span> <span class="toc-text">2.3、外边距margin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1%E3%80%81%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1、外边距典型应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2%E3%80%81%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2、外边距合并</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4%E3%80%81%E6%B8%85%E9%99%A4%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="toc-number">2.4.</span> <span class="toc-text">2.4、清除内外边距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5%E3%80%81-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86"><span class="toc-number">2.5.</span> <span class="toc-text">2.5、 圆角边框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6%E3%80%81%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1"><span class="toc-number">2.6.</span> <span class="toc-text">2.6、盒子阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1%E3%80%81%E5%8A%A8%E6%80%81%E9%98%B4%E5%BD%B1"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1、动态阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%E3%80%81%E6%96%87%E6%9C%AC%E9%98%B4%E5%BD%B1"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.1 、文本阴影</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B5%AE%E5%8A%A8"><span class="toc-number">3.</span> <span class="toc-text">三、浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1%E3%80%81%E4%BC%A0%E7%BB%9F%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、传统网页布局的三种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、浮动的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3%E3%80%81-%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、 浮动的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81-%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E5%92%8C%E6%A0%87%E5%87%86%E6%B5%81%E7%88%B6%E7%BA%A7%E6%90%AD%E9%85%8D%E4%BD%BF%E7%94%A8"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、 浮动元素和标准流父级搭配使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5%E3%80%81-%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">3.5.</span> <span class="toc-text">3.5、 浮动的注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">3.6.</span> <span class="toc-text">3.6、清除浮动的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.7.</span> <span class="toc-text">3.7、清除浮动的方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9A%E4%BD%8D"><span class="toc-number">4.</span> <span class="toc-text">四、定位</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E3%80%81%E5%AE%9A%E4%BD%8D%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 、定位的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2%E3%80%81%E9%9D%99%E6%80%81%E5%AE%9A%E4%BD%8Dstatic-%E4%BA%86%E8%A7%A3"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、静态定位static(了解)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3%E3%80%81%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8Drelative"><span class="toc-number">4.3.</span> <span class="toc-text">4.3、相对定位relative</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8Dabsolute"><span class="toc-number">4.4.</span> <span class="toc-text">4.4、绝对定位absolute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5%E3%80%81%E5%AD%90%E7%BB%9D%E7%88%B6%E7%9B%B8"><span class="toc-number">4.5.</span> <span class="toc-text">4.5、子绝父相</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6%E3%80%81%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8Dfixed"><span class="toc-number">4.6.</span> <span class="toc-text">4.6、固定定位fixed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7%E3%80%81%E5%AE%9A%E4%BD%8D%E5%8F%A0%E6%94%BEz-index"><span class="toc-number">4.7.</span> <span class="toc-text">4.7、定位叠放z-index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8%E3%80%81%E5%AE%9A%E4%BD%8D%E6%89%A9%E5%B1%95"><span class="toc-number">4.8.</span> <span class="toc-text">4.8、定位扩展</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%85%83%E7%B4%A0%E7%9A%84%E9%9A%90%E8%97%8F%E4%B8%8E%E6%98%BE%E7%A4%BA"><span class="toc-number">5.</span> <span class="toc-text">五、元素的隐藏与显示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1%E3%80%81display%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、display显示隐藏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2%E3%80%81visibility%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-number">5.2.</span> <span class="toc-text">5.2、visibility可见性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3%E3%80%81overflow%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F"><span class="toc-number">5.3.</span> <span class="toc-text">5.3、overflow溢出显示隐藏</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://s3.bmp.ovh/imgs/2022/09/28/b353d80bc1f5e400.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By yikafu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
-  if (typeof pangu === 'object') pangu.autoSpacingPage()
-  else {
-    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
-      .then(() => {
-        pangu.autoSpacingPage()
-      })
-  }
-}
 
-function panguInit () {
-  if (false){
-    GLOBAL_CONFIG_SITE.isPost && panguFn()
-  } else {
-    panguFn()
-  }
-}
-
-document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
-
-  }
-}
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
-  window.MathJax = {
-    tex: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"]],
-      tags: 'ams'
-    },
-    chtml: {
-      scale: 1.2
-    },
-    options: {
-      renderActions: {
-        findScript: [10, doc => {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/)
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
-            const text = document.createTextNode('')
-            node.parentNode.replaceChild(text, node)
-            math.start = {node: text, delim: '', n: 0}
-            math.end = {node: text, delim: '', n: 0}
-            doc.math.push(math)
-          }
-        }, ''],
-        insertScript: [200, () => {
-          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
-            const target = node.parentNode
-            if (target.nodeName.toLowerCase() === 'li') {
-              target.parentNode.classList.add('has-jax')
-            } else {
-              target.classList.add('has-jax')
-            }
-          });
-        }, '', false]
-      }
-    }
-  }
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-  const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
-  script.id = 'MathJax-script'
-  script.async = true
-  document.head.appendChild(script)
-} else {
-  MathJax.startup.document.state(0)
-  MathJax.texReset()
-  MathJax.typeset()
-}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/css/">#css</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/2022-08-01-CSS%E7%AC%94%E8%AE%B0-%E9%AB%98%E7%BA%A7%E4%B8%8E%E6%96%B0%E7%89%B9%E6%80%A7.html" title="CSS笔记-高级与新特性">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CSS笔记-高级与新特性</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/2022-02-24-python.html" title="Python学习笔记">
+                        <span class="hidden-mobile">Python学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
