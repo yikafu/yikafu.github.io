@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.9k 字
+          4.2k 字
         
       </span>
     
@@ -236,7 +236,7 @@
         
         
         
-          25 分钟
+          35 分钟
         
       </span>
     
@@ -432,7 +432,7 @@
 <h1 id="三、接口、抽象类、访问修饰"><a href="#三、接口、抽象类、访问修饰" class="headerlink" title="三、接口、抽象类、访问修饰"></a>三、接口、抽象类、访问修饰</h1><h2 id="3-1、接口"><a href="#3-1、接口" class="headerlink" title="3.1、接口"></a>3.1、接口</h2><ul>
 <li><p>定义：实现某一特定功能的一组功能的对外接口的规范，而不是真正地实现这个功能，接口中的方法没有有方法体，仅仅是声明方法名</p>
 </li>
-<li><p>通过关键字&#96;&#96;implements&#96;声明接口</p>
+<li><p>通过关键字<code>implements</code>声明接口</p>
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">implements 接口名 &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">getNext</span><span class="hljs-params">()</span>；<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">reset</span><span class="hljs-params">()</span>；<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">setStart</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span>；<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -494,9 +494,9 @@
 <td></td>
 </tr>
 </tbody></table>
-<ul>
-<li>类的访问控制权限只能为public和缺省，变量和方法的访问控制可以为任何一种</li>
-</ul>
+<blockquote>
+<p>类的访问控制权限只能为public和缺省，变量和方法的访问控制可以为任何一种</p>
+</blockquote>
 <ol>
 <li><p><strong>private</strong></p>
 <ul>
@@ -533,6 +533,133 @@
 </ul>
 </li>
 </ol>
+<h2 id="3-5、final修饰符"><a href="#3-5、final修饰符" class="headerlink" title="3.5、final修饰符"></a>3.5、final修饰符</h2><ol>
+<li>final修饰的变量（最终变量）<ul>
+<li>final修饰的变量只能在<strong>声明时进行初始化</strong>或者<strong>通过构造方法赋值</strong></li>
+<li>final修饰的变量的<strong>值在程序执行过程中是不能改变的</strong></li>
+<li>final变量在声明时没有赋初值，则要在所属类的<strong>每个构造方法中</strong>对该变量赋值</li>
+</ul>
+</li>
+<li>final修饰的方法（最终方法）<ul>
+<li>子类不能重复定义与此方法同名的方法（可继承不可覆盖）</li>
+</ul>
+</li>
+<li>final修饰的类（最终类）<ul>
+<li>最终类不能有子类</li>
+<li>最终类里的所有成员方法都是最终方法</li>
+<li><strong>被定义为final的类通常是一些有固定作用、用来完成某种标准功能的类</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="3-6、语句块"><a href="#3-6、语句块" class="headerlink" title="3.6、语句块"></a>3.6、语句块</h2><ol>
+<li><p>static命令语句块</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">static</span> &#123;<br>    .....<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>位于类中，不属于任何方法，<strong>只在类加载完成时执行一次</strong></li>
+<li>多语句块时自上而下执行</li>
+</ul>
+</li>
+<li><p>命令语句块</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">&#123;<br>    ....<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>位于类中，不属于任何方法，<strong>在执行构造方法前执行</strong></li>
+<li>多语句块时自上而下执行</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-7、对象的上转型"><a href="#3-7、对象的上转型" class="headerlink" title="3.7、对象的上转型"></a>3.7、对象的上转型</h2><ul>
+<li><p>上转型对象可以调用被子类继承的变量和方法，不能调用自己定义的变量和方法</p>
+</li>
+<li><p>上转型的后的对象就会调用子类的同名方法，而不是父类的方法</p>
+</li>
+<li><p>上转型对象能访问父类的静态方法</p>
+</li>
+<li><p>上转型对象强制转换成子类对象，那么可以正常访问子类中定义的新的变量和方法</p>
+</li>
+<li><p>上转型总是可以成功的，但下转型则不一定可行</p>
+</li>
+</ul>
+<h1 id="四、其他补充"><a href="#四、其他补充" class="headerlink" title="四、其他补充"></a>四、其他补充</h1><h2 id="4-1、java语言包"><a href="#4-1、java语言包" class="headerlink" title="4.1、java语言包"></a>4.1、java语言包</h2><ol>
+<li><strong>Object</strong>类是所有Java类的祖先<ul>
+<li>Object类的常用方法及其说明</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>protected Object clone()</td>
+<td>生成并返回当前对象的一个拷贝</td>
+</tr>
+<tr>
+<td>public boolean equals(Object obj)</td>
+<td>比较两个对象是否相同，结果为一布尔值</td>
+</tr>
+<tr>
+<td>public final class getClass()</td>
+<td>返回一个对象在运行时所对应的类的表示，从而得到相关的类的信息</td>
+</tr>
+<tr>
+<td>protected void finalize() throws Throwable</td>
+<td>定义回收当前对象时所需完成的清理工作</td>
+</tr>
+<tr>
+<td>public String toString()</td>
+<td>返回描述当前对象的字符串信息</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><strong>System</strong>类<ul>
+<li>System类有三个成员变量，它们均是静态的，分别是：系统的标准输入、标准输出、和标准错误输出</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-2、异常"><a href="#4-2、异常" class="headerlink" title="4.2、异常"></a>4.2、异常</h2><ol>
+<li>异常捕获语句</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span>&#123;<br>    <br>&#125;<span class="hljs-keyword">catch</span>(捕获的错误类型)&#123;<br>    <br>&#125;<span class="hljs-keyword">finally</span>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>异常抛出语句</li>
+</ol>
+<ul>
+<li><p>异常的抛出是通过 throws 语句实现</p>
+</li>
+<li><p>throw语句是以一个异常对象作为它的参数</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">throws</span> 异常类名 [异常类名表]<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>自定义异常类</li>
+</ol>
+<ul>
+<li>通过创建继承于Exception的类</li>
+</ul>
+<ol start="4">
+<li>断言</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">assert</span> 逻辑表达式<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如该表达式的值为false，则抛出一个没有任何详细信息的AssertionError类型的错误</li>
+</ul>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">assert</span> 逻辑表达式：表达式<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如果逻辑表达式值为false，则系统计算表达式的值，然后以这个值为参数调用 AssertionError类的构造方法，创建一个包含详细描述信息的AssertionError对象抛出并退出</li>
+</ul>
+<h2 id="？？？"><a href="#？？？" class="headerlink" title="？？？"></a>？？？</h2><ul>
+<li>对于<code>String a = “java”</code> 和 <code>String b = new String(&quot;java&quot;)</code>，前者是一个常量字符串，后者是一个字符串对象</li>
+<li>使用<code>equals()</code>方法比较的是两个对象值，而<code>==</code>比较的两个引用是否指向同一个对象</li>
+</ul>
 
                 
               </div>
@@ -556,8 +683,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/2022-08-24-Powershell%E7%BE%8E%E5%8C%96.html" title="Powershell美化">
-                        <span class="hidden-mobile">Powershell美化</span>
+                      <a href="/posts/2022-08-10-JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" title="JS学习笔记">
+                        <span class="hidden-mobile">JS学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
